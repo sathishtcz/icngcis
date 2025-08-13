@@ -4,120 +4,121 @@ export default function Editorialboard() {
 
     const editorialMembers = [
         {
-            name: "Stanley Adiele Okolie",
-            department: "Computer Science",
-            university: "Federal University of Technology Owerri",
+            name: "K. Kishore Kumar",
+            department: "Computer Science and Engineering",
+            university: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
+            country: "India"
+        },
+        {
+            name: "Alamu Olumide",
+            department: "Electrical and Electronics Engineering",
+            university: "University of Lagos",
             country: "Nigeria"
         },
         {
-            name: "Bilal Saoud",
-            department: "Electrical Engineering",
-            university: "University of Bouira",
-            country: "Algeria"
-        },
-        {
-            name: "Anuj Kumar",
-            department: "Computer Science",
-            university: "Doon University",
+            name: "S. Jayashree",
+            department: "Computer Science and Engineering",
+            university: "KGISL Institute of technology",
             country: "India"
         },
 
         {
-            name: "Monday Fredrick Ohemu",
-            department: "Electrical and Electronics Engineering",
-            university: "Airforce Institute of Technology",
-            country: "Nigeria"
+            name: "Shakar Ahmed Aziz",
+            department: "Mathematics",
+            university: "Duhok University",
+            country: "Iraq"
         },
         {
-            name: "Kabelo Given Chuma",
-            department: "Information Science",
-            university: "University of South Africa",
-            country: "South Africa"
+            name: "Daban Kadhim Omar Dabbagh",
+            department: "Geography",
+            university: "Salahaddin University",
+            country: "Iraq"
         },
         {
-            name: "Pravin Futane",
-            department: "Computer Engineering",
-            university: "Vishwakarma Institute of Information Technology",
+            name: "D. Kayathri Devi",
+            department: "Information Technology and Engineering",
+            university: "Amity University",
+            country: "Uzbekistan"
+        },
+        {
+            name: "Ali Rizwan",
+            department: "Industrial Engineering",
+            university: "King Abdulaziz University",
+            country: "Saudi Arabia"
+        },
+        {
+            name: "Kabir G. Kharade",
+            department: "Computer Science",
+            university: "Shivaji University",
             country: "India"
         },
         {
-            name: "Ajaegbu Chigozirim",
-            department: "Information Technology",
-            university: "Babcock University",
-            country: "Nigeria"
-        },
-        {
-            name: "Grace Egbi Alilu",
-            department: "Computer Science",
-            university: "Hallmark University",
-            country: "Nigeria"
-        },
-        {
-            name: "Arindom Kundu",
-            department: "Computer Science and Engineering",
+            name: "Shaikh Muhammad Allayear",
+            department: "Multimedia and Creative Technology",
             university: "Daffodil International University",
             country: "Bangladesh"
         },
         {
-            name: "Sidaoui Boutkhil",
+            name: "Collins N. Udanor",
             department: "Computer Science",
-            university: "Salhi Ahmed University of Naama",
-            country: "Algeria"
-        },
-        {
-            name: "Kolawole Yusuf Obiwusi",
-            department: "Mathematics and Computer Science",
-            university: "Summit University",
+            university: "University of Nigeria",
             country: "Nigeria"
         },
         {
-            name: "Citra Fathia Palembang",
-            department: "Computer Science",
-            university: "Pattimura University",
-            country: "Indonesia"
+            name: "Sirajuddin Qureshi",
+            department: "Information Technology",
+            university: "Beijing University of Technology",
+            country: "China"
         },
         {
-            name: "Abderrahim Bouchair",
-            department: "Computer Science",
-            university: "University of Oran1 Ahmed Ben Bella",
-            country: "Algeria"
-        },
-        {
-            name: "Arun Kumar Rouniyar",
-            department: "Mechanical Engineering",
-            university: "Saharsa college of Engineering",
-            country: "India"
-        },
-        {
-            name: "Ghasem Abbasi",
-            department: "Mathematics and Statistics",
-            university: "Islamic Azad University",
-            country: "Iran"
-        },
-        {
-            name: "Marwan Ramdhany Edy",
-            department: "Informatics and Computer Engineering",
-            university: "Universitas Negeri Makassar",
-            country: "Indonesia"
-        },
-        {
-            name: "Shazia Riaz",
-            department: "Computer Science",
-            university: "Women University Faisalabad",
+            name: "Muhammad Suleman Memon",
+            department: "Information Technology",
+            university: "University of Sindh",
             country: "Pakistan"
         },
         {
-            name: "Rahman Shafique",
-            department: "Information and Communication Engineering",
-            university: "Yeungnam University",
-            country: "South Korea"
+            name: "Tariq Javid",
+            department: "Biomedical Engineering",
+            university: "Hamdard University",
+            country: "Pakistan"
         },
         {
-            name: "Robin Prakash Mathur",
+            name: "Md Nahiduzzaman",
+            department: "Electrical and Computer Engineering",
+            university: "Rajshahi University of Engineering and Technology",
+            country: "Bangladesh"
+        },
+        {
+            name: "K. Kokilavani",
             department: "Computer Science and Engineering",
-            university: "Lovely Professional University",
+            university: "Panimalar Engineering College",
             country: "India"
         },
+        {
+            name: "Qiushi Yang",
+            department: "Electronic Engineering",
+            university: "City University of Hong Kong",
+            country: "China"
+        },
+        {
+            name: "Samuel Akpan Robinson",
+            department: "Computer Science and Cyber Security",
+            university: "University of Uyo",
+            country: "Nigeria "
+        },
+        {
+            name: "Sutikno",
+            department: "Informatics",
+            university: "University of Diponegoro",
+            country: "Indonesia"
+        },
+        {
+            name: "Ijegwa David Acheme",
+            department: "Computer Science",
+            university: "Edo State University",
+            country: "Nigeria"
+        },
+
         {
             name: "Lamia Abed Noor Muhammed",
             department: "Computer Science",
@@ -125,22 +126,22 @@ export default function Editorialboard() {
             country: "Iraq"
         },
         {
-            name: "Ardhendu Mandala",
-            department: "Computer Science and Technology",
-            university: "University of North Bengal",
-            country: "India"
+            name: "Sharmin Akter",
+            department: "Computer Science and Engineering",
+            university: "Daffodil International University",
+            country: "Bangladesh"
         },
         {
-            name: "Tanimu Mohammed",
-            department: "Statistics",
-            university: "University of Abuja",
-            country: "Nigeria"
+            name: "Rogerio Espindola",
+            department: "Civil Engineering",
+            university: "Federal University of Rio de Janeiro",
+            country: "Brazil"
         },
         {
-            name: "Muhammad Mujahid",
-            department: "Computer Science",
-            university: "Khwaja Fareed University of Engineering & Information Technology",
-            country: "Pakistan"
+            name: "S. Prasanth",
+            department: "Physical Sciences and Technology",
+            university: "Sabaragamuwa University of Sri Lanka",
+            country: "Sri Lanka"
         },
     ];
 
