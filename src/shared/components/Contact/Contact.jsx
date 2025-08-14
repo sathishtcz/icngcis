@@ -95,7 +95,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600 text-sm">info.icngcis@gmail.com</p>
+                  <p className="text-gray-600 text-sm wrap-anywhere">info.icngcis@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -190,7 +190,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-600 to-orange-400 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition duration-200"
+                className="w-full bg-gradient-to-r from-orange-600 to-orange-400 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition duration-200 cursor-pointer"
               >
                 {status === 'Sending...' ? 'Submitting...' : 'Send Message'}
               </button>

@@ -75,7 +75,7 @@ function Header() {
                     <div className="flex justify-between items-center">
                         <Link to="/" className="flex items-center space-x-3">
                             {/* <img alt="ICCNDS 2025 Logo" className="w-40 " src="/assets/images/logo.png" /> */}
-                            <h1 className={`text-3xl font-bold  ${scrolled ? "text-orange-600" : "text-white"}`}>ICNGCIS</h1>
+                            <h1 className={`text-3xl font-bold  ${Active === "/" ? scrolled ? "text-orange-600" : "text-white" : "text-orange-600"}`}>ICNGCIS</h1>
                         </Link>
 
                         {/* Desktop Nav */}

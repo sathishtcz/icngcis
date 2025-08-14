@@ -88,7 +88,7 @@ function About() {
           </div>
 
           <section className="mt-18">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto">
               <div className="">
 
                 <div>
@@ -101,7 +101,7 @@ function About() {
                   <h3 className="md:text-4xl text-2xl font-bold text-gray-800 mb-4 leading-tight">
                     Benefits of Participation
                   </h3>
-                  <p className="text-gray-800 mb-6">
+                  <p className="text-gray-800 mb-6 text-justify sm:text-base md:text-lg lg:text-[16px] leading-relaxed">
                     Participating in the International Conference on Next-Gen Computing & Intelligent Systems offers a wealth of opportunities for researchers, academicians, industry professionals, students, and technology enthusiasts. This premier global event goes beyond presentations—it is an immersive platform for exchanging ideas, discovering cutting-edge innovations, and building valuable collaborations. Here’s how attendees benefit:
                   </p>
 

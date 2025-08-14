@@ -83,7 +83,7 @@ export default function Scope() {
           </div>
 
           <section className="mt-18">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto">
               <div className="">
 
                 <div>
@@ -96,7 +96,7 @@ export default function Scope() {
                   <h3 className="md:text-4xl text-2xl font-bold text-gray-800 mb-4 leading-tight">
                     Key Highlights & Features
                   </h3>
-                  <p className="text-gray-800 mb-6">
+                  <p className="text-gray-800 mb-6 leading-relaxed sm:text-base md:text-lg lg:text-[16px] text-justify">
                     The International Conference on Next-Gen Computing & Intelligent Systems serves as a dynamic platform for the exchange of knowledge, research findings, and technological advancements in emerging domains that are shaping the future of computing and intelligent systems. The scope of the conference spans a broad range of disciplines, encouraging participation from researchers, academicians, engineers, industry experts, and students across the globe.
                   </p>
 

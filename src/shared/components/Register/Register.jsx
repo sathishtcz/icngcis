@@ -15,13 +15,13 @@ export default function Register() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/paper-submission">
-              <button className="bg-white text-gray-900 hover:bg-orange-500 hover:text-white  px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center transition-colors duration-300">
+              <button className="bg-white text-gray-900 hover:bg-orange-500 hover:text-white  px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center transition-colors duration-300 cursor-pointer">
                 Register Now
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             </Link>
             <Link to="/contact">
-              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-[9px] rounded-lg font-semibold transition-colors duration-300 cursor-pointer">
                 Contact Us
               </button>
             </Link>
