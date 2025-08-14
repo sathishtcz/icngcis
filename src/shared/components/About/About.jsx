@@ -4,25 +4,25 @@ import React from 'react'
 function About() {
 
   const features = [
-  <>
-    <span className='font-medium text-orange-600'>Showcase Your Research Globally</span> – Present your original work to a diverse audience of experts, academics, and industry leaders, gaining visibility and recognition in the global research community.
-  </>,
-  <>
-    <span className='font-medium text-orange-600'>Learn from World-Class Experts</span> – Gain deep insights into the latest trends, breakthroughs, and research directions in next-generation computing, artificial intelligence, and intelligent systems from keynote sessions, technical talks, and workshops led by distinguished speakers.
-  </>,
-  <>
-    <span className='font-medium text-orange-600'>Networking Opportunities</span> – Connect with like-minded professionals, renowned researchers, innovators, and entrepreneurs to explore collaborative projects, joint research, and industry partnerships.
-  </>,
-  <>
-    <span className='font-medium text-orange-600'>Skill Development</span> – Participate in hands-on workshops and interactive sessions that enhance technical skills, research capabilities, and problem-solving approaches relevant to evolving technologies.
-  </>,
- 
+    <>
+      <span className='font-medium text-orange-600'>Showcase Your Research Globally</span> – Present your original work to a diverse audience of experts, academics, and industry leaders, gaining visibility and recognition in the global research community.
+    </>,
+    <>
+      <span className='font-medium text-orange-600'>Learn from World-Class Experts</span> – Gain deep insights into the latest trends, breakthroughs, and research directions in next-generation computing, artificial intelligence, and intelligent systems from keynote sessions, technical talks, and workshops led by distinguished speakers.
+    </>,
+    <>
+      <span className='font-medium text-orange-600'>Networking Opportunities</span> – Connect with like-minded professionals, renowned researchers, innovators, and entrepreneurs to explore collaborative projects, joint research, and industry partnerships.
+    </>,
+    <>
+      <span className='font-medium text-orange-600'>Skill Development</span> – Participate in hands-on workshops and interactive sessions that enhance technical skills, research capabilities, and problem-solving approaches relevant to evolving technologies.
+    </>,
 
-];
+
+  ];
 
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <div className="relative bg-cover  bg-center flex items-center pt-10  pb-10 h-[290px] sm:h-[300px] md:h-[380px] lg:h-[380px]  " style={{ backgroundImage: "url('/assets/images/banner2.jpg')" }} >
         {/* Overlay */}
         <div className="absolute inset-0 bg-[#000000] opacity-60 "></div>
@@ -57,18 +57,18 @@ function About() {
                 Where Innovation Meets Academic Excellence
               </h2>
 
-              <div className="lg:hidden block ">
+              <div className="lg:hidden block " >
                 <img
-                  src="/assets/images/about2.jpg"
+                  src="/assets/images/about3.png"
                   alt="Conference auditorium"
-                  className="w-full h-[300px] object-cover rounded-2xl border-2 border-gray-400"
+                  className="w-[450px] mx-auto"
                 />
               </div>
               <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify  mb-4 mt-6">
                 The International Conference on Next-Gen Computing & Intelligent Systems is a premier global forum that brings together researchers, academicians, industry experts, innovators, and students to exchange knowledge, foster collaboration, and explore advancements in cutting-edge computing technologies and intelligent systems.
               </p>
               <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify ">
-                By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems.
+                By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNGCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems.
               </p>
               {/* <Link to="/about" className="">
               <button className="inline-flex items-center justify-center px-3 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">
@@ -78,16 +78,16 @@ function About() {
             </Link> */}
             </div>
 
-            <div className="lg:block hidden">
+            <div className="lg:block hidden  "  data-aos="fade-left">
               <img
-                src="/assets/images/about2.jpg"
+                src="/assets/images/about3.png"
                 alt="Conference auditorium"
-                className="w-full h-[420px] object-cover rounded-2xl border-2 border-gray-400"
+                className=" w-[480px] mx-auto"
               />
             </div>
           </div>
 
-          <section className="mt-18">
+          <section className="mt-18"  data-aos="fade-up">
             <div className="container mx-auto">
               <div className="">
 
@@ -123,7 +123,7 @@ function About() {
 
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -36,7 +36,7 @@ function Home() {
 
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <section className="w-full min-h-screen flex bg-right bg-cover  items-center justify-center relative bg-[url('/assets/images/Hero.jpg')]">
         <div
           className="absolute inset-0   bg-[#000d0f]  opacity-80"
@@ -44,7 +44,7 @@ function Home() {
         <div className='container mx-auto px-6 py-5 z-20 lg:mt-0 mt-22'>
           <div className=" grid lg:grid-cols-2 gap-12 items-center text-white ">
             {/* Left Side Content */}
-            <div>
+            <div data-aos="fade-right">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-6 w-1 bg-orange-600 rounded" />
                 <span className="  text-base tracking-widest text-gray-200">
@@ -81,20 +81,20 @@ function Home() {
 
               <div className="flex flex-row gap-3 mb-10 ">
                 <Link to="paper-submission">
-                  <button className="inline-flex items-center justify-center px-4 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-lg">
+                  <button className="inline-flex items-center justify-center px-4 py-2 custom-btn btn-9 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px]">
                     Register
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </button>
                 </Link>
                 <Link to="contact">
-                  <button className="cursor-pointer inline-flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:text-black hover:border-gray-900  hover:bg-gray-50 transition-all duration-500 ">
+                  <button className="text-[16px] cursor-pointer inline-flex items-center justify-center px-6 py-2 con-btn btn-10 border border-gray-300 rounded-lg font-semibold text-black hover:border-gray-900  hover:bg-gray-50 transition-all duration-500 ">
                     Contact Us
                   </button>
                 </Link>
 
               </div>
 
-              <div className="grid grid-cols-3 gap-6 lg:max-w-lg">
+              {/* <div className="grid grid-cols-3 gap-6 lg:max-w-lg">
                 <div>
                   <div className="text-3xl  font-extrabold">3</div>
                   <div className="text-sm text-gray-3 00">Days</div>
@@ -107,23 +107,23 @@ function Home() {
                   <div className="text-3xl font-extrabold">100+</div>
                   <div className="text-sm text-gray-3 00">Speakers</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
-            <div className="relative lg:block hidden">
+            <div className="relative lg:block hidden" data-aos="fade-left">
               <img
                 src="/assets/images/Hero2.jpg"
                 alt="Conference auditorium"
                 className="w-full h-[420px] object-cover rounded-2xl border-2 border-gray-400"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+              <div className="absolute -bottom-6 -left-6 bg-white border border-gray-200 rounded-xl p-5 shadow-sm" data-aos="fade-down">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-orange-100 rounded-lg">
                     <Globe2 className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-700">Location</div>
-                    <div className="font-semibold text-gray-800">London, United Kingdom</div>
+                    <div className="font-semibold text-gray-800">Jakarta, Indonesia </div>
                   </div>
                 </div>
               </div>
@@ -147,32 +147,32 @@ function Home() {
               Where Innovation Meets Academic Excellence
             </h2>
 
-            <div className="lg:hidden block ">
+            <div className="lg:hidden block " data-aos="fade-down">
               <img
-                src="/assets/images/about2.jpg"
+                src="/assets/images/about3.png"
                 alt="Conference auditorium"
-                className="w-full h-[300px] object-cover rounded-2xl border-2 border-gray-400"
+                className="w-[450px] mx-auto"
               />
             </div>
             <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify  mb-4 mt-6">
               The International Conference on Next-Gen Computing & Intelligent Systems is a premier global forum that brings together researchers, academicians, industry experts, innovators, and students to exchange knowledge, foster collaboration, and explore advancements in cutting-edge computing technologies and intelligent systems.
             </p>
             <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify ">
-              By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems.
+              By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNGCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems.
             </p>
             <Link to="/about" className="">
-              <button className="inline-flex items-center justify-center px-3 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">
+              <button className="inline-flex items-center justify-center px-3 py-2  custom-btn btn-9 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">
                 Read More
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             </Link>
           </div>
 
-          <div className="lg:block hidden">
+          <div className="lg:block hidden  " data-aos="fade-down">
             <img
-              src="/assets/images/about2.jpg"
+              src="/assets/images/about3.png"
               alt="Conference auditorium"
-              className="w-full h-[420px] object-cover rounded-2xl border-2 border-gray-400"
+              className=" w-[480px] mx-auto"
             />
           </div>
         </div>
@@ -183,11 +183,11 @@ function Home() {
 
       <div className="container mx-auto px-6 mt-18">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div className="lg:block hidden">
+          <div className="lg:block hidden" data-aos="fade-up">
             <img
-              src="/assets/images/about1.jpg"
+              src="/assets/images/scope.png"
               alt="Conference auditorium"
-              className="w-full h-[420px] object-cover rounded-2xl border-2 border-gray-400"
+              className="w-[480px] mx-auto"
             />
           </div>
 
@@ -202,11 +202,11 @@ function Home() {
               Next-Generation Computing
             </h2>
 
-            <div className="lg:hidden block ">
+            <div className="lg:hidden block " data-aos="fade-up">
               <img
-                src="/assets/images/about1.jpg"
+                src="/assets/images/scope.png"
                 alt="Conference auditorium"
-                className="w-full h-[300px] object-cover rounded-2xl border-2 border-gray-400"
+                className="w-[480px] mx-auto"
               />
             </div>
             <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify  mb-4 mt-6">
@@ -218,7 +218,7 @@ function Home() {
               <li className='sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify '><span className='font-medium text-orange-600'>Cybersecurity</span> – Secure computing systems, cryptography, distributed ledgers, and digital trust.</li>
             </ul>
             <Link to="/scope" className="">
-              <button className="inline-flex items-center justify-center px-3 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">
+              <button className="inline-flex items-center justify-center px-3 py-2 custom-btn btn-9 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">
                 Read More
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
@@ -258,7 +258,7 @@ function Home() {
         </div>
       </div>
 
-    </>
+    </div>
   )
 }
 

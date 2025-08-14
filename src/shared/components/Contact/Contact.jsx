@@ -28,7 +28,7 @@ export default function Contact() {
         formDataToSend.append(key, value);
       });
 
-      const response = await fetch('http://192.168.1.53/ICASMET/contact.php', {
+      const response = await fetch('http://192.168.1.53/ICNGCIS/contact.php', {
         method: 'POST',
         body: formDataToSend,
       });
@@ -91,20 +91,20 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center space-x-4">
                 <div className="flex items-center justify-center">
-                  <MailIcon className="w-6 h-6 text-orange-500"/>
+                  <MailIcon className="w-6 h-6 text-orange-500" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600 text-sm wrap-anywhere">info.icngcis@gmail.com</p>
+                  <p className="text-gray-600 text-base wrap-anywhere">icngcis.org@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-orange-500"/>
+                  <MapPin className="w-6 h-6 text-orange-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Venue</h4>
-                  <p className="text-gray-600 text-sm">Kuala Lumpur, Malaysia</p>
+                  <h4 className="font-semibold text-gray-900">Location</h4>
+                  <p className="text-gray-600 text-base">Jakarta, Indonesia </p>
                 </div>
               </div>
             </div>
@@ -188,12 +188,14 @@ export default function Contact() {
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-orange-600 to-orange-400 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition duration-200 cursor-pointer"
-              >
-                {status === 'Sending...' ? 'Submitting...' : 'Send Message'}
-              </button>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="custom-btn btn-9 text-white px-3 py-2 rounded-lg font-medium  transition duration-200 cursor-pointer w-fit"
+                >
+                  {status === 'Sending...' ? 'Submitting...' : 'Send Message'}
+                </button>
+              </div>
             </form>
           </div>
 

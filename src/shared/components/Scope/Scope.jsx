@@ -21,7 +21,7 @@ export default function Scope() {
 
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <div className="relative bg-cover  bg-center flex items-center pt-10  pb-10 h-[290px] sm:h-[300px] md:h-[380px] lg:h-[380px]  " style={{ backgroundImage: "url('/assets/images/banner2.jpg')" }} >
         {/* Overlay */}
         <div className="absolute inset-0 bg-[#000000] opacity-60 "></div>
@@ -45,11 +45,11 @@ export default function Scope() {
 
         <div className="container mx-auto px-6 ">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="lg:block hidden">
+            <div className="lg:block hidden"  data-aos="fade-right">
               <img
-                src="/assets/images/about1.jpg"
+                src="/assets/images/scope.png"
                 alt="Conference auditorium"
-                className="w-full h-[420px] object-cover rounded-2xl border-2 border-gray-400"
+                className="w-[480px] mx-auto"
               />
             </div>
 
@@ -66,9 +66,9 @@ export default function Scope() {
 
               <div className="lg:hidden block ">
                 <img
-                  src="/assets/images/about1.jpg"
+                  src="/assets/images/scope.png"
                   alt="Conference auditorium"
-                  className="w-full h-[300px] object-cover rounded-2xl border-2 border-gray-400"
+                  className="w-[480px] mx-auto"
                 />
               </div>
               <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify  mb-4 mt-6">
@@ -82,7 +82,7 @@ export default function Scope() {
             </div>
           </div>
 
-          <section className="mt-18">
+          <section className="mt-18"  data-aos="fade-up">
             <div className="container mx-auto">
               <div className="">
 
@@ -118,7 +118,7 @@ export default function Scope() {
 
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

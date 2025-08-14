@@ -37,7 +37,7 @@ export default function Papersub() {
         e.preventDefault();
         setStatus('Sending...');
 
-        const journalName = 'icasmet';
+        const journalName = 'icngcis';
         // Generate unique ID: journalName + YYYYMMDD + HHMMSS
         const now = new Date();
         const dateStr = now.toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD
@@ -66,7 +66,7 @@ export default function Papersub() {
             googleSheetsParams.append('Institution_Name', formData.Institution_Name);
             googleSheetsParams.append('Paper_Track', formData.Paper_Track);
 
-            const mailPromise = fetch('http://192.168.1.53/ICASMET/mail.php', {
+            const mailPromise = fetch('http://192.168.1.53/ICNGCIS/mail.php', {
                 method: 'POST',
                 body: formDataToSend,
             });
@@ -334,7 +334,7 @@ export default function Papersub() {
                                     <button
                                         type="submit"
                                         disabled={status === 'Sending...'}
-                                        className="w-fit bg-gradient-to-r from-orange-600 to-orange-400 text-white px-3 py-2 rounded-lg  cursor-pointer transition duration-300 inter-semibold mt-6"
+                                        className="w-fit custom-btn btn-9 text-white px-3 py-2 rounded-lg  cursor-pointer transition duration-300 inter-semibold mt-6"
                                     >
                                         {status === 'Sending...' ? 'Submitting...' : 'Submit Your Paper'}
                                     </button>

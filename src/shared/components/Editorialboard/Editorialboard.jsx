@@ -146,7 +146,7 @@ export default function Editorialboard() {
     ];
 
     return (
-        <>
+       <div className='overflow-hidden'>
             <div className="relative bg-cover  bg-center flex items-center pt-10  pb-10 h-[290px] sm:h-[300px] md:h-[380px] lg:h-[380px]  " style={{ backgroundImage: "url('/assets/images/banner2.jpg')" }} >
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-[#000000] opacity-60 "></div>
@@ -185,45 +185,53 @@ export default function Editorialboard() {
 
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {editorialMembers.map((member, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
-                            >
-                                {/* Number Badge */}
-                                <div className="absolute top-4 left-4 w-10 h-10 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">
-                                    {index + 1}
+                        {editorialMembers.map((member, index) => {
+                            const aosType =
+                                index % 3 === 0? "zoom-in": index % 3 === 1    ? "flip-left"    : "flip-right";
+
+                            return (
+                                <div
+                                    key={index}
+                                    data-aos={aosType}
+                                    data-aos-duration="600"
+                                    data-aos-delay={index * 100}
+                                    className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                                >
+                                    {/* Number Badge */}
+                                    <div className="absolute top-4 left-4 w-10 h-10 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md">
+                                        {index + 1}
+                                    </div>
+
+                                    {/* Name */}
+                                    <h3 className="mt-12 text-xl font-semibold text-gray-900 leading-tight group-hover:text-orange-600 transition-colors duration-300">
+                                        Dr. {member.name}
+                                    </h3>
+
+                                    {/* Department */}
+                                    <p className="text-gray-600 mt-2 text-base">
+                                        <span className="font-medium text-gray-800">Department:</span> {member.department}
+                                    </p>
+
+                                    {/* University */}
+                                    <p className="text-gray-600 mt-1 text-base">
+                                        <span className="font-medium text-gray-800">University:</span> {member.university}
+                                    </p>
+
+                                    {/* Country */}
+                                    <div className="mt-4 flex items-center space-x-2">
+                                        <span className="inline-block px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-sm font-semibold">
+                                            {member.country}
+                                        </span>
+                                    </div>
                                 </div>
-
-                                {/* Name */}
-                                <h3 className="mt-12 text-xl font-semibold text-gray-900 leading-tight group-hover:text-orange-600 transition-colors duration-300">
-                                    Dr. {member.name}
-                                </h3>
-
-                                {/* Department */}
-                                <p className="text-gray-600 mt-2 text-base">
-                                    <span className="font-medium text-gray-800">Department:</span> {member.department}
-                                </p>
-
-                                {/* University */}
-                                <p className="text-gray-600 mt-1 text-base">
-                                    <span className="font-medium text-gray-800">University:</span> {member.university}
-                                </p>
-
-                                {/* Country */}
-                                <div className="mt-4 flex items-center space-x-2">
-                                    <span className="inline-block px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-sm font-semibold">
-                                        {member.country}
-                                    </span>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

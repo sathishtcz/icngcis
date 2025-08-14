@@ -69,7 +69,7 @@ function Header() {
         <>
             {/* <nav className={`fixed w-full top-0 z-50 transition-all duration-300 py-4  ${ scrolled ? 'bg-white   shadow-xl  ' : 'bg-transparent'}`}> */}
             <nav
-                className={`fixed w-full top-0 z-50 transition-all duration-300 py-4 ${Active === "/"? scrolled    ? "bg-white text-black shadow-xl"    : "bg-transparent text-white": "bg-white text-black shadow-xl"}`}
+                className={`fixed w-full top-0 z-50 transition-all duration-300 py-4 ${Active === "/" ? scrolled ? "bg-white text-black shadow-xl" : "bg-transparent text-white" : "bg-white text-black shadow-xl"}`}
             >
                 <div className="container mx-auto px-6">
                     <div className="flex justify-between items-center">
@@ -80,46 +80,48 @@ function Header() {
 
                         {/* Desktop Nav */}
                         <div className="hidden lg:flex space-x-10">
-                            <Link to="/" className={`text-xl  transition duration-300 font-medium hover:text-orange-500  ${Active === "/" ? "text-orange-600" :   "text-black"  }`}>Home</Link>
+                            <Link to="/" className={`text-xl  transition duration-300 font-medium hover:text-orange-500  ${Active === "/" ? "text-orange-600" : "text-black"}`}>Home</Link>
 
                             {/* About Dropdown */}
                             <div className="relative " ref={deskaboutRef}>
-                                <button className={`text-xl  flex items-center space-x-2 font-medium  hover:text-orange-500 ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" :  ""  }`} onClick={() => desktopmenu('about')}>
+                                <button className={`text-xl  flex items-center space-x-2 font-medium  hover:text-orange-500 ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" : ""}`} onClick={() => desktopmenu('about')}>
                                     <span>About Us</span>
-                                    <span className="text-sm"><IoIosArrowDropdown className='text-lg' /></span>
+                                    <span className="text-sm"><IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isDesktopMenuOpen === "about" ? 'rotate-180' : 'rotate-0'}`} /></span>
                                 </button>
                                 <div className={`mt-2 absolute  overflow-hidden border border-gray-300 transition-all p-2 duration-400 ease-in-out bg-white shadow-lg rounded-md pt-3 pb-3 whitespace-nowrap ${isDesktopMenuOpen === 'about' ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                    <Link to="/about" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150   font-medium rounded-md ${Active === "/about" ? "text-orange-600" : "text-black"}`}>About the Conference</Link>
-                                    <Link to="/scope" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md  ${Active === "/scope" ? "text-orange-600" : "text-black"}`}>Scope of Conference</Link>
-                                    <Link to="/organizingCommittee" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md  ${Active === "/organizingCommittee" ? "text-orange-600" : "text-black"}`}>Organzing Committee</Link>
-                                    <Link to="/editorial" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150  font-medium rounded-md ${Active === "/editorial" ? "text-orange-600" : "text-black"}`}>Editorial Board</Link>
+                                    <Link to="/about" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150   font-medium rounded-md hover:text-orange-500 ${Active === "/about" ? "text-orange-600" : "text-black"}`}>About the Conference</Link>
+                                    <Link to="/scope" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500  ${Active === "/scope" ? "text-orange-600" : "text-black"}`}>Scope of Conference</Link>
+                                    <Link to="/organizingCommittee" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500  ${Active === "/organizingCommittee" ? "text-orange-600" : "text-black"}`}>Organzing Committee</Link>
+                                    <Link to="/editorial" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150  font-medium rounded-md hover:text-orange-500 ${Active === "/editorial" ? "text-orange-600" : "text-black"}`}>Editorial Board</Link>
                                 </div>
                             </div>
 
                             {/* Author's Desk Dropdown */}
                             <div className="relative" ref={deskAuthorRef}>
-                                <button className={`text-xl  flex items-center space-x-2  font-medium hover:text-orange-500 ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? "text-orange-600" :   ""  }`} onClick={() => desktopmenu('author')}>
+                                <button className={`text-xl  flex items-center space-x-2  font-medium hover:text-orange-500 ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? "text-orange-600" : ""}`} onClick={() => desktopmenu('author')}>
                                     <span>Author's Desk</span>
-                                    <span className="text-sm"><IoIosArrowDropdown className='text-lg' /></span>
+                                    <span className="text-sm"><IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isDesktopMenuOpen === "author" ? 'rotate-180' : 'rotate-0'}`} /></span>
                                 </button>
-                                <div className={`mt-2 absolute overflow-hidden border border-gray-300 transition-all duration-500 ease-in-out bg-white p-2 shadow-lg rounded-md pt-3 pb-3 whitespace-nowrap ${isDesktopMenuOpen === 'author' ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                    <Link to="/conferenceTracks" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium  rounded-md ${Active === "/conferenceTracks" ? "text-orange-600" : "text-black"}`}>Conference Tracks</Link>
-                                    <Link to="/important-dates" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md ${Active === "/important-dates" ? "text-orange-600" : "text-black"}`}>Key Dates</Link>
-                                    <Link to="/paper-submission" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md ${Active === "/paper-submission" ? "text-orange-600" : "text-black"}`}>Paper Submission</Link>
+                                <div className={`mt-2 absolute overflow-hidden border border-gray-300 transition-all duration-500 ease-in-out bg-white p-2 shadow-lg rounded-md pt-3 pb-3 whitespace-nowrap  ${isDesktopMenuOpen === 'author' ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                    <Link to="/conferenceTracks" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium  rounded-md hover:text-orange-500 ${Active === "/conferenceTracks" ? "text-orange-600" : "text-black"}`}>Conference Tracks</Link>
+                                    <Link to="/important-dates" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500 ${Active === "/important-dates" ? "text-orange-600" : "text-black"}`}>Key Dates</Link>
+                                    <Link to="/paper-submission" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500 ${Active === "/paper-submission" ? "text-orange-600" : "text-black"}`}>Paper Submission</Link>
                                 </div>
                             </div>
 
-                            <Link to="/contact" className={`text-xl  font-medium  hover:text-orange-500 ${Active === "/contact" ? "text-orange-600" : "" }`}>Contact Us</Link>
+                            <Link to="/contact" className={`text-xl  font-medium  hover:text-orange-500 ${Active === "/contact" ? "text-orange-600" : ""}`}>Contact Us</Link>
                         </div>
 
-                        <Link to="/paper-submission" className='hidden lg:block'>
+                        <Link to="/paper-submission" className="hidden lg:block">
                             <button
-                                className={`uppercase  p-1 py-2 px-4   font-medium bg-orange-600  rounded-lg text-white transition-all duration-300 cursor-pointer ${scrolled ? 'border-2 border-black' : 'border-2 border-white'}`}
+                                className={`custom-btn btn-9 text-[16px] font-medium rounded-lg text-white relative px-6 py-2 cursor-pointer transition-all duration-300 ${scrolled ? "border-2 border-black" : "border-2 border-white"
+                                    }`}
                                 aria-label="Register for the conference"
                             >
-                                Register Here
+                                Register Now
                             </button>
                         </Link>
+
 
                         {/* Mobile Menu Button - Single Dynamic Icon */}
                         <button
@@ -173,7 +175,7 @@ function Header() {
                         <Link
                             to="/"
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`text-lg transition duration-300 font-medium text-black hover:text-orange-500 ${Active === "/" ? "text-orange-600" :  "text-black"}`}
+                            className={`text-lg transition duration-300 font-medium text-black hover:text-orange-500 ${Active === "/" ? "text-orange-600" : "text-black"}`}
                         >
                             Home
                         </Link>
@@ -181,14 +183,14 @@ function Header() {
                         {/* About Us Dropdown */}
                         <div className='w-full'>
                             <button
-                                className={`w-full text-center flex items-center justify-center space-x-2 ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" : "text-black"}`}
+                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" : "text-black"}`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
                                     toggleMenu('about');
                                 }}
                             >
-                                <span className='text-lg font-medium'>About Us</span>
+                                <span className='text-lg font-medium '>About Us</span>
                                 <IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isOpen === "about" ? 'rotate-180' : 'rotate-0'}`} />
                             </button>
                             <div
@@ -206,7 +208,7 @@ function Header() {
                                     <Link
                                         to="/scope"
                                         onClick={() => { setMobileMenuOpen(false); setOpenMenu(null); }}
-                                        className={`block py-2 hover:text-orange-500 transition-colors font-medium ${Active === "/scope" ? "text-orange-600"  : "text-black"}`}
+                                        className={`block py-2 hover:text-orange-500 transition-colors font-medium ${Active === "/scope" ? "text-orange-600" : "text-black"}`}
                                     >
                                         Scope of the Conference
                                     </Link>
@@ -231,14 +233,14 @@ function Header() {
                         {/* Author's Desk Dropdown */}
                         <div className='w-full'>
                             <button
-                                className={`w-full text-center flex items-center justify-center space-x-2 ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? 'text-orange-500' : 'text-black'}`}
+                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? 'text-orange-500' : 'text-black'}`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
                                     toggleMenu('author');
                                 }}
                             >
-                                <span className='text-lg font-medium'>Author's Desk</span>
+                                <span className='text-lg font-medium '>Author's Desk</span>
                                 <IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isOpen === "author" ? 'rotate-180' : 'rotate-0'}`} />
                             </button>
                             <div

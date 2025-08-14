@@ -37,14 +37,14 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'info.icasmet@gmail.com';
+    $mail->Username   = 'icngcis.org@gmail.com';
     $mail->Password   = 'qsbk fesa xbdn pkca'; // App Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
     // Email setup to admin
-    $mail->setFrom('info.icasmet@gmail.com', 'ICASMET Enquiry');
-    $mail->addAddress('info.icasmet@gmail.com', 'ICASMET Enquiry');
+    $mail->setFrom('icngcis.org@gmail.com', 'ICNGCIS Enquiry');
+    $mail->addAddress('icngcis.org@gmail.com', 'ICNGCIS Enquiry');
     $mail->addReplyTo($_POST['email'], $_POST['firstname'] . ' ' . $_POST['secondname']);
     $mail->isHTML(true);
     $mail->Subject = 'New Contact Form Submission';
@@ -94,15 +94,15 @@ try {
     $replyMail->isSMTP();
     $replyMail->Host       = 'smtp.gmail.com';
     $replyMail->SMTPAuth   = true;
-    $replyMail->Username   = 'info.icasmet@gmail.com';
+    $replyMail->Username   = 'icngcis.org@gmail.com';
     $replyMail->Password   = 'qsbk fesa xbdn pkca';
     $replyMail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $replyMail->Port       = 587;
 
-    $replyMail->setFrom('info.icasmet@gmail.com', 'ICASMET Team');
+    $replyMail->setFrom('icngcis.org@gmail.com', 'ICNGCIS Team');
     $replyMail->addAddress($_POST['email'], $_POST['firstname'] . ' ' . $_POST['secondname']);
     $replyMail->isHTML(true);
-    $replyMail->Subject = 'Thank you for your enquiry - ICASMET 2025';
+    $replyMail->Subject = 'Thank you for your enquiry - ICNGCIS 2025';
 
     $replyMail->Body = '
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -115,11 +115,11 @@ try {
                 <li><strong>Phone:</strong> ' . htmlspecialchars($_POST['number']) . '</li>
                 <li><strong>Message:</strong> ' . nl2br(htmlspecialchars($_POST['message'])) . '</li>
             </ul>
-            <p>Warm regards,<br>ICASMET 2025 Team</p>
+            <p>Warm regards,<br>ICNGCIS 2025 Team</p>
         </div>
     ';
 
-    $replyMail->AltBody = "Thank you " . $_POST['firstname'] . " for contacting us.\n\nWe have received your enquiry and will get back to you soon.\n\n- ICASMET 2025 Team";
+    $replyMail->AltBody = "Thank you " . $_POST['firstname'] . " for contacting us.\n\nWe have received your enquiry and will get back to you soon.\n\n- ICNGCIS 2025 Team";
 
     $replyMail->send();
 
