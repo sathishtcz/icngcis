@@ -71,16 +71,16 @@ export default function Keydates() {
               Time is ticking towards one of the most anticipated gatherings in the world of computing and intelligent systems — The International Conference on Next-Gen Computing & Intelligent Systems. Stay ahead by keeping track of the important milestones on our conference journey.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 max-w-[70rem] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 max-w-[70rem] mx-auto p-1">
             {keyDates.map((keyDates, index) => {
               const aosType = index % 3 === 0 ? "zoom-in" : index % 3 === 1 ? "flip-left" : "flip-right";
 
               return (
                 <div
                   key={index}
-                  data-aos={aosType}
-                  data-aos-duration="600"
-                  data-aos-delay={index * 100}
+                  // data-aos={aosType}
+                  // data-aos-duration="600"
+                  // data-aos-delay={index * 100}
                   className={`bg-white rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.15)] p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group ${index === 4 ? 'md:col-span-2 mx-auto ' : ''}`}
                 >
                   <div className="flex items-center mb-4">

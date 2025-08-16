@@ -38,7 +38,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'icngcis.org@gmail.com';
-    $mail->Password   = 'qsbk fesa xbdn pkca'; // App Password
+    $mail->Password   = 'wdul xhuo ugdi adcm'; // App Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
@@ -95,7 +95,7 @@ try {
     $replyMail->Host       = 'smtp.gmail.com';
     $replyMail->SMTPAuth   = true;
     $replyMail->Username   = 'icngcis.org@gmail.com';
-    $replyMail->Password   = 'qsbk fesa xbdn pkca';
+    $replyMail->Password   = 'wdul xhuo ugdi adcm';
     $replyMail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $replyMail->Port       = 587;
 

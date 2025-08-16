@@ -192,9 +192,9 @@ export default function Editorialboard() {
                             return (
                                 <div
                                     key={index}
-                                    data-aos={aosType}
-                                    data-aos-duration="600"
-                                    data-aos-delay={index * 100}
+                                    // data-aos={aosType}
+                                    // data-aos-duration="300"
+                                    // data-aos-delay={index * 100}
                                     className="bg-white rounded-2xl shadow-md border border-gray-200 p-6 relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
                                 >
                                     {/* Number Badge */}

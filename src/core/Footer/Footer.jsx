@@ -13,9 +13,10 @@ export default function Footer() {
 
 
                         <div>
-                            <h2 className="text-xl lg:text-2xl font-bold tracking-wide text-orange-600 px-2 bg-white w-fit rounded-md p-1">
+                            {/* <h2 className="text-xl lg:text-2xl font-bold tracking-wide text-orange-600 px-2 bg-white w-fit rounded-md p-1">
                                 ICNGCIS 2025
-                            </h2>
+                            </h2> */}
+                            <img alt="ICNGCIS 2025 Logo" className="w-45 " src="/assets/images/logo2.png" />
                             <p className="text-gray-200 text-[16px] mt-3 text-xl">
                                 International Conference on Next-Gen Computing and Intelligent Systems
                             </p>
@@ -68,7 +69,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-center gap-2 mt-2">
                                 <GrLocation className='flex-shrink-0'/>
-                                <p className="text-gray-200 text-[16px]">Kuala Lumpur, Malaysia</p>
+                                <p className="text-gray-200 text-[16px]">Jakarta, Indonesia</p>
                             </div>
 
                             {/* <p className="text-gray-200 mt-2 text-lg">+91 123 456 7890</p> */}

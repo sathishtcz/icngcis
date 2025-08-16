@@ -39,7 +39,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'icngcis.org@gmail.com';
-    $mail->Password   = 'qsbk fesa xbdn pkca';
+    $mail->Password   = 'wdul xhuo ugdi adcm';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 

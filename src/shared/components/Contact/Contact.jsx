@@ -28,7 +28,7 @@ export default function Contact() {
         formDataToSend.append(key, value);
       });
 
-      const response = await fetch('http://192.168.1.53/ICNGCIS/contact.php', {
+      const response = await fetch('https://icngcis.org/api/contact.php', {
         method: 'POST',
         body: formDataToSend,
       });
