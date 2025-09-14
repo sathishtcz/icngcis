@@ -68,7 +68,7 @@ function About() {
                 The International Conference on Next-Gen Computing & Intelligent Systems is a premier global forum that brings together researchers, academicians, industry experts, innovators, and students to exchange knowledge, foster collaboration, and explore advancements in cutting-edge computing technologies and intelligent systems.
               </p>
               <p className="sm:text-base md:text-lg lg:text-[16px] text-gray-900 leading-relaxed text-justify ">
-                By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNGCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems.
+                By featuring keynote addresses from thought leaders, technical paper presentations, workshops, and panel discussions, ICNGCIS empowers participants to explore transformative innovations shaping the future of computing and intelligent systems. The Selective accepted papers of our International Conference on Next-Gen Computing & Intelligent Systems will be recommended to publish in the indexed Journals.
               </p>
               {/* <Link to="/about" className="">
               <button className="inline-flex items-center justify-center px-3 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-600 cursor-pointer text-[16px] mt-3">

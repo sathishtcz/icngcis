@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Globe2, ArrowRight } from 'lucide-react';
+import Marquee from 'react-fast-marquee';
 
 
 
 function Home() {
+
+  
 
   const tracks = [
     {
@@ -31,6 +34,20 @@ function Home() {
       title: "Track 6: Human-Computer Interaction & Virtual Technologies",
       description: "AR/VR applications, brain-computer interfaces, immersive learning, and user experience design."
     }
+  ];
+
+  const imageItems = [
+    { src: 'assets/images/associates/1.png', },
+    { src: 'assets/images/associates/2.jpg', },
+    { src: 'assets/images/associates/3.jpg', },
+    { src: 'assets/images/associates/4.jpg', },
+    { src: 'assets/images/associates/5.jpg', },
+    { src: 'assets/images/associates/6.jpg', },
+    { src: "assets/images/associates/scopus.png", },
+    { src: "assets/images/associates/8.jpg", },
+    { src: "assets/images/associates/9.jpg", },
+    { src: "assets/images/associates/10.jpg", },
+    { src: "assets/images/associates/11.jpg", },
   ];
 
 
@@ -68,7 +85,7 @@ function Home() {
                     </div>
                     <div>
                       <div className="text-sm text-gray-700">Location</div>
-                      <div className="font-semibold text-gray-800">London, United Kingdom</div>
+                      <div className="font-semibold text-gray-800">Jakarta, Indonesia</div>
                     </div>
                   </div>
                 </div>
@@ -256,6 +273,27 @@ function Home() {
             ))}
           </div>
         </div>
+      </div>
+
+
+      {/*Indexed Journals*/}
+      <div className="mt-18 text-center">
+        <h2 className="md:text-4xl text-2xl font-bold text-gray-800 text-center">
+          Indexed Journals
+        </h2>
+      </div>
+      <div className="container px-6 mx-auto mt-3">
+        <p className="inter-regular text-gray-700 sm:text-base md:text-lg lg:text-[16px] text-center max-w-5xl mx-auto leading-[30px] ">The Selective accepted papers of our International Conference on Next-Gen Computing & Intelligent Systems will be recommended to publish in the following index & publisher Journals.</p>
+        <Marquee direction="left" speed={100}>
+          {/* pauseOnHover={true} */}
+          <div className="flex pb-5 pt-5 ">
+            {imageItems.map((item, index) => (
+              <div key={index} className="flex justify-center mr-10  py-5" >
+                <img src={item.src} alt="images" className=" w-[300px] rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.15)] hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] transition duration-300 hover:-translate-y-4" />
+              </div>
+            ))}
+          </div>
+        </Marquee>
       </div>
 
     </div>

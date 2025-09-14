@@ -7,10 +7,11 @@ function Header() {
     const [isDesktopMenuOpen, setDesktopMenuOpen] = useState(false);
     const [isOpen, setOpenMenu] = useState(null);
     const location = useLocation();
-    const Active = location.pathname;
+    const Active = location.pathname + location.hash;
     const mobileRef = useRef(null);
     const deskaboutRef = useRef(null);
     const deskAuthorRef = useRef(null);
+    const deskEditorialRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -22,12 +23,15 @@ function Header() {
 
             if (mobileRef.current && !mobileRef.current.contains(event.target)) {
                 setMobileMenuOpen(false);
-                setOpenMenu(null); // Close any open submenus
+                setOpenMenu(null); 
             }
             if (isDesktopMenuOpen === 'about' && deskaboutRef.current && !deskaboutRef.current.contains(event.target)) {
                 setDesktopMenuOpen(false);
             }
             if (isDesktopMenuOpen === 'author' && deskAuthorRef.current && !deskAuthorRef.current.contains(event.target)) {
+                setDesktopMenuOpen(false);
+            }
+            if (isDesktopMenuOpen === 'editorial' && deskEditorialRef.current && !deskEditorialRef.current.contains(event.target)) {
                 setDesktopMenuOpen(false);
             }
         };
@@ -57,11 +61,22 @@ function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (location.hash) {
+            const sectionId = location.hash.replace("#", "");
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+    }, [location]);
+
     //height for mobile menu
     const getMobileMenuHeight = () => {
-        let baseHeight = 200;
+        let baseHeight = 250;
         if (isOpen === 'about') baseHeight += 220;
         if (isOpen === 'author') baseHeight += 190;
+        if (isOpen === 'editorial') baseHeight += 190;
         return baseHeight;
     };
 
@@ -80,25 +95,46 @@ function Header() {
 
                         {/* Desktop Nav */}
                         <div className="hidden lg:flex space-x-10">
-                            <Link to="/" className={`text-xl  transition duration-300 font-medium hover:text-orange-500  ${Active === "/" ? "text-orange-600" : "text-black"}`}>Home</Link>
+                            <Link to="/" className={`text-lg  transition duration-300 font-medium hover:text-orange-500  ${Active === "/" ? "text-orange-600" : "text-black"}`}>Home</Link>
 
                             {/* About Dropdown */}
                             <div className="relative " ref={deskaboutRef}>
-                                <button className={`text-xl  flex items-center space-x-2 font-medium  hover:text-orange-500 ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" : ""}`} onClick={() => desktopmenu('about')}>
+                                <button className={`text-lg  flex items-center space-x-2 font-medium  hover:text-orange-500 ${Active === "/about" || Active === "/scope"  ? "text-orange-600" : ""}`} onClick={() => desktopmenu('about')}>
                                     <span>About Us</span>
                                     <span className="text-sm"><IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isDesktopMenuOpen === "about" ? 'rotate-180' : 'rotate-0'}`} /></span>
                                 </button>
                                 <div className={`mt-2 absolute  overflow-hidden border border-gray-300 transition-all p-2 duration-400 ease-in-out bg-white shadow-lg rounded-md pt-3 pb-3 whitespace-nowrap ${isDesktopMenuOpen === 'about' ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
                                     <Link to="/about" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150   font-medium rounded-md hover:text-orange-500 ${Active === "/about" ? "text-orange-600" : "text-black"}`}>About the Conference</Link>
                                     <Link to="/scope" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500  ${Active === "/scope" ? "text-orange-600" : "text-black"}`}>Scope of Conference</Link>
-                                    <Link to="/organizingCommittee" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500  ${Active === "/organizingCommittee" ? "text-orange-600" : "text-black"}`}>Organzing Committee</Link>
-                                    <Link to="/editorial" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150  font-medium rounded-md hover:text-orange-500 ${Active === "/editorial" ? "text-orange-600" : "text-black"}`}>Editorial Board</Link>
+                                </div>
+                            </div>
+
+                            {/* Editorial Board with Sub-dropdown */}
+                            <div className="relative" ref={deskEditorialRef}>
+                                <button
+                                    className={`text-lg flex items-center space-x-2 font-medium hover:text-orange-500
+                                    ${Active === "/editorial" || Active === "/editorial#organizing" || Active === "/editorial#technical" || Active === "/editorial#advisory" ? "text-orange-600 " : ""}`}
+                                    onClick={() => desktopmenu('editorial')}
+                                >
+                                    <span>Editorial Board</span>
+                                    <IoIosArrowDropdown
+                                        className={`text-lg transition-transform duration-300 ${isDesktopMenuOpen === "editorial" ? 'rotate-180' : 'rotate-0'}`}
+                                    />
+                                </button>
+
+                                <div
+                                    className={`mt-2 p-2 absolute overflow-hidden border border-gray-300 transition-all duration-400 ease-in-out bg-white shadow-lg rounded-md pt-3 pb-3 whitespace-nowrap 
+                                    ${isDesktopMenuOpen === 'editorial' ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}
+                                >
+                                    <Link to="/editorial#organizing" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500 ${Active === "/editorial#organizing" ? "text-orange-600" : "text-black"}`}>Organizing Committee</Link>
+                                    <Link to="/editorial#technical" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500 ${Active === "/editorial#technical" ? "text-orange-600" : "text-black"} `}>Technical Committee</Link>
+                                    <Link to="/editorial#advisory" onClick={() => setDesktopMenuOpen(false)} className={`block px-4 py-2 hover:font-medium duration-150 font-medium rounded-md hover:text-orange-500 ${Active === "/editorial#advisory" ? "text-orange-600" : "text-black"}`}>Advisory Committee</Link>
                                 </div>
                             </div>
 
                             {/* Author's Desk Dropdown */}
                             <div className="relative" ref={deskAuthorRef}>
-                                <button className={`text-xl  flex items-center space-x-2  font-medium hover:text-orange-500 ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? "text-orange-600" : ""}`} onClick={() => desktopmenu('author')}>
+                                <button className={`text-lg  flex items-center space-x-2  font-medium hover:text-orange-500 ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? "text-orange-600" : ""}`} onClick={() => desktopmenu('author')}>
                                     <span>Author's Desk</span>
                                     <span className="text-sm"><IoIosArrowDropdown className={`text-lg transition-transform duration-300 ${isDesktopMenuOpen === "author" ? 'rotate-180' : 'rotate-0'}`} /></span>
                                 </button>
@@ -109,10 +145,10 @@ function Header() {
                                 </div>
                             </div>
 
-                            <Link to="/contact" className={`text-xl  font-medium  hover:text-orange-500 ${Active === "/contact" ? "text-orange-600" : ""}`}>Contact Us</Link>
+                            <Link to="/contact" className={`text-lg  font-medium  hover:text-orange-500 ${Active === "/contact" ? "text-orange-600" : ""}`}>Contact Us</Link>
                         </div>
 
-                        <Link to="/paper-submission" className="hidden lg:block">
+                        {/* <Link to="/paper-submission" className="hidden lg:block">
                             <button
                                 className={`custom-btn btn-9 text-[16px] font-medium rounded-lg text-white relative px-6 py-2 cursor-pointer transition-all duration-300 ${scrolled ? "border-2 border-black" : "border-2 border-white"
                                     }`}
@@ -120,7 +156,7 @@ function Header() {
                             >
                                 Register Now
                             </button>
-                        </Link>
+                        </Link> */}
 
 
                         {/* Mobile Menu Button - Single Dynamic Icon */}
@@ -183,7 +219,7 @@ function Header() {
                         {/* About Us Dropdown */}
                         <div className='w-full'>
                             <button
-                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/about" || Active === "/scope" || Active === "/organizingCommittee" || Active === "/editorial" ? "text-orange-600" : "text-black"}`}
+                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/about" || Active === "/scope"  ? "text-orange-600" : "text-black"}`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
@@ -212,7 +248,7 @@ function Header() {
                                     >
                                         Scope of the Conference
                                     </Link>
-                                    <Link
+                                    {/* <Link
                                         to="/organizingCommittee"
                                         onClick={() => { setMobileMenuOpen(false); setOpenMenu(null); }}
                                         className={`block py-2 hover:text-orange-500 transition-colors font-medium ${Active === "/organizingCommittee" ? "text-orange-600" : "text-black"}`}
@@ -225,6 +261,54 @@ function Header() {
                                         className={`block py-2 hover:text-orange-500 transition-colors font-medium ${Active === "/editorial" ? "text-orange-600" : "text-black"}`}
                                     >
                                         Editorial Board
+                                    </Link> */}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {/* Editorial Board Sub-dropdown */}
+                        <div className='w-full'>
+                            <button
+                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500transition-colors 
+                                ${Active === "/editorial" || Active === "/editorial#organizing" || Active === "/editorial#technical" || Active === "/editorial#advisory" ? "text-orange-600 font-semibold" : "text-black"}`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    toggleMenu('editorial');
+                                }}
+                            >
+                                <span className='text-lg font-medium '>Editorial Board</span>
+                                <IoIosArrowDropdown
+                                    className={`text-lg transition-transform duration-300 ${isOpen === "editorial" ? 'rotate-180' : 'rotate-0'}`}
+                                />
+                            </button>
+
+                            <div
+                                className={`overflow-hidden transition-all duration-300 ease-in-out 
+                                ${isOpen === 'editorial' ? 'max-h-60 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+                            >
+                                <div className="bg-white border border-gray-500 rounded-md p-2 space-y-2">
+                                    <Link
+                                        to="/editorial#organizing"
+                                        onClick={() => { setMobileMenuOpen(false); setOpenMenu(null); }}
+                                        className={`block py-2 hover:text-orange-500transition-colors font-medium ${Active === "/editorial#organizing" ? "text-orange-600 font-semibold" : "text-black"}`}
+                                    >
+                                        Organizing Committee
+                                    </Link>
+                                    <Link
+                                        to="/editorial#technical"
+                                        onClick={() => { setMobileMenuOpen(false); setOpenMenu(null); }}
+                                        className={`block py-2 hover:text-orange-500transition-colors font-medium ${Active === "/editorial#technical" ? "text-orange-600 font-semibold" : "text-black"}`}
+                                    >
+                                        Technical Committee
+                                    </Link>
+                                    <Link
+                                        to="/editorial#advisory"
+                                        onClick={() => { setMobileMenuOpen(false); setOpenMenu(null); }}
+                                        className={`block py-2 hover:text-orange-500transition-colors font-medium ${Active === "/editorial#advisory" ? "text-orange-600 font-semibold" : "text-black"}`}
+                                    >
+                                        Advisory Committee
                                     </Link>
                                 </div>
                             </div>
@@ -233,7 +317,7 @@ function Header() {
                         {/* Author's Desk Dropdown */}
                         <div className='w-full'>
                             <button
-                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? 'text-orange-500' : 'text-black'}`}
+                                className={`w-full text-center flex items-center justify-center space-x-2 hover:text-orange-500 transition-colors ${Active === "/conferenceTracks" || Active === "/important-dates" || Active === "/paper-submission" ? 'text-orange-600' : 'text-black'}`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
